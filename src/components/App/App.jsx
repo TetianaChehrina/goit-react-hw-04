@@ -24,7 +24,7 @@ export default function App() {
         setLoading(true);
         setError(false);
         const data = await fetchImages(searchTerm, page);
-        setImages(data.results);
+        setImages((prevPhotos) => [...prevPhotos, ...data.results]);
         console.log(data);
       } catch (error) {
         setError(true);
@@ -42,16 +42,7 @@ export default function App() {
   };
 
   const handleLoadMore = async () => {
-    try {
-      setLoading(true);
-      const nextPage = await fetchImages(searchTerm, page + 1);
-      setPage((prevPage) => prevPage + 1);
-      setImages((prevImages) => [...prevImages, ...nextPage.results]);
-    } catch (error) {
-      setError(true);
-    } finally {
-      setLoading(false);
-    }
+    setPage((prevPage) => prevPage + 1);
   };
 
   const handleOpenModal = (image) => {
@@ -70,7 +61,7 @@ export default function App() {
       {error && <ErrorMessage />}
       {loading && <Loader />}
       {images.length > 0 && (
-        <ImageGallery listImages={images} isOpen={handleOpenModal} />
+        <ImageGallery listImages={images} onOpen={handleOpenModal} />
       )}
       {images.length > 0 && <LoadMoreBtn onChange={handleLoadMore} />}
       {modalImage && (
