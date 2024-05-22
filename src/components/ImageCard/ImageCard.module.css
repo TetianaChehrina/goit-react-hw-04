@@ -1,0 +1,9 @@
+.image_Card {
+  cursor: pointer;
+}
+
+.listItem {
+  width: 320px;
+  height: 320px;
+  object-fit: cover;
+}

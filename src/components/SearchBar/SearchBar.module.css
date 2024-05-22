@@ -1,0 +1,62 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(94, 94, 219);
+  width: 1440px;
+  height: 90px;
+}
+.form {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 24px;
+}
+
+.label {
+  display: none;
+}
+
+.search_Text {
+  width: 300px;
+  height: 40px;
+  padding-left: 10px;
+  border: none;
+  border-radius: 5px;
+  position: relative;
+  background-color: #cfc9c9;
+  color: #000000;
+}
+
+.formBtn {
+  position: absolute;
+  width: 50x;
+  height: 30px;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  background-color: transparent;
+  color: rgb(76, 75, 75);
+  transition: color, background 1s;
+}
+.formBtn:hover {
+  color: rgb(230, 224, 235);
+  background-color: rgb(82, 80, 80);
+}
+.icon {
+  color: #0b0b0b;
+  cursor: pointer;
+}
+.icon:hover {
+  color: rgb(0, 203, 88);
+}
+.error_Toast {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+.error_Icon {
+  width: 40px;
+  height: 40px;
+}
