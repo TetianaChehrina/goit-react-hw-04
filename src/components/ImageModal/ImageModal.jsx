@@ -6,12 +6,7 @@ const ImageModal = ({ image, isOpen, onClose }) => {
     <Modal
       isOpen={isOpen}
       style={{
-        overlay: { background: "#000000cd" },
         content: {
-          borderRadius: "6px",
-          width: "650px",
-          height: "550px",
-
           position: "absolute",
           top: "50%",
           left: "50%",
@@ -19,16 +14,6 @@ const ImageModal = ({ image, isOpen, onClose }) => {
         },
       }}
       onRequestClose={onClose}
-      ariaHideApp={false}
-      shouldFocusAfterRender={true}
-      shouldCloseOnOverlayClick={true}
-      shouldCloseOnEsc={true}
-      shouldReturnFocusAfterClose={true}
-      preventScroll={false}
-      aria={{
-        labelledby: "heading",
-        describedby: "full_description",
-      }}
     >
       <div className={css.container}>
         <img
